@@ -11,6 +11,7 @@ History
 
 Description
 This library is designed to use FM24C04B 4Kb Serial 5V F-RAM Memory.
+Datasheet : http://datasheet.octopart.com/FM24C04B-G-Ramtron-datasheet-11038332.pdf
 
 Memory is organised in two pages, each page have 512 byte blocks of memory. So, a record is defined by his page and his adress in the page.
 
@@ -41,4 +42,5 @@ FRAM_EXAMPLE -> simple write / serial read back
 Cautions
 
 - Take care of the supply voltage : the range is 4,5V - 5,5V. If you apply 4V it won't work (which can happen easily is you use USB supply).
+- For the same reason, you may need a level shifter to interface it with 3.3V microcontrollers  
 - The library doesn't take account of what have been written. That means if for example you write a long at page=0 address=20 and after you write an integer at page=0 and address=22, your long is corrupted because you overwrited its last two bytes 

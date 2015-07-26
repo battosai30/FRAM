@@ -3,7 +3,7 @@
 FRAM::FRAM(byte Address) {
 
 Wire.begin();
-_i2cAddress= (0b101000 | Address )<<1;
+_i2cAddress= (0b101000 | Address)<<1;
 
 }
 
@@ -33,7 +33,7 @@ int FRAM::ReadInt(byte Page,byte Address) {
 
   ReadBurst(Page,Address, 2);
      
-  return int(Wire.read()) | int(Wire.read()<<8);
+  return int(Wire.read()) | int(Wire.read())<<8;
 
 }
 
@@ -49,7 +49,7 @@ long FRAM::ReadLong(byte Page,byte Address) {
 
   ReadBurst(Page,Address, 4);
      
-  return long(Wire.read()) | long(Wire.read()<<8) | long(Wire.read()<<16) | long(Wire.read()<<24) ;
+  return long(Wire.read()) | long(Wire.read())<<8 | long(Wire.read())<<16 | long(Wire.read())<<24 ;
 
 }
 

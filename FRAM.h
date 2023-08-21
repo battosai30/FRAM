@@ -6,7 +6,7 @@ Author : B@tto battomicro.wordpress.com
 
 Compatible with Arduino and Energia
 
-V1.0
+V1.1
 
  */
 
@@ -32,21 +32,21 @@ class FRAM
 {
 	private:
 	
-	byte _i2cAddress;    
-	void ReadBurst(byte Page,byte Address, int NumberOfByte);
-	void WriteBurst(byte Page,byte Address, byte* Data, int NumberOfByte);
+	uint8_t _i2cAddress;    
+	void ReadBurst(uint8_t Page, uint8_t Address, uint16_t NumberOfByte);
+	void WriteBurst(uint8_t Page, uint8_t Address, uint8_t* Data, uint16_t NumberOfByte);
 	
 	public:
 	
 	FRAM(byte Adress);
 	~FRAM();
 	
-	void WriteLong(byte Page, byte Address, long Data); 
-	long ReadLong(byte Page,byte Address);
-	void WriteInt(byte Page,byte Address, int Data); 
-	int ReadInt(byte Page,byte Address);
-	void WriteByte(byte Page,byte Address,byte Data);
-	byte ReadByte(byte Page,byte Address);
+	void WriteLong(uint8_t Page, uint8_t Address, int32_t Data); 
+	int32_t ReadLong(uint8_t Page, uint8_t Address);
+	void WriteInt(uint8_t Page,uint8_t Address, int16_t Data); 
+	int16_t ReadInt(uint8_t Page,uint8_t Address);
+	void WriteByte(uint8_t Page,uint8_t Address, uint8_t Data);
+	uint8_t ReadByte(uint8_t Page,uint8_t Address);
 };
 
 #endif
